@@ -1,0 +1,42 @@
+version: 2
+
+models:
+  - name: stg_historical_flights
+    description: "Cleaned and standardized historical ADS-B flight position data."
+
+    columns:
+
+      - name: ICAO24
+        description: "Unique aircraft transponder identifier."
+        data_tests:
+          - not_null
+
+      - name: EVENT_DATETIME
+        description: "Timestamp of the aircraft position event."
+        data_tests:
+          - not_null
+
+      - name: LATITUDE
+        description: "Aircraft latitude."
+        data_tests:
+          - not_null
+
+      - name: LONGITUDE
+        description: "Aircraft longitude."
+        data_tests:
+          - not_null
+
+      - name: EVENT_DATE
+        description: "Calendar date derived from EVENT_DATETIME."
+        data_tests:
+          - not_null
+
+      - name: ON_GROUND_STATUS
+        description: "Standardized interpretation of the source ON_GROUND value."
+        data_tests:
+          - accepted_values:
+              arguments:
+                values:
+                  - "AIRBORNE"
+                  - "ON GROUND"
+                  - "UNKNOWN"

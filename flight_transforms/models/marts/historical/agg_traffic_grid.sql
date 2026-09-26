@@ -1,0 +1,32 @@
+{{ config(
+    materialized='table',
+    schema='HISTORICAL_GOLD'
+) }}
+
+SELECT
+
+    EVENT_DATE,
+
+    TO_NUMBER(
+        TO_CHAR(EVENT_DATE, 'YYYYMMDD')
+    ) AS DATE_KEY,
+
+    ROUND(LATITUDE, 1) AS LATITUDE_GRID,
+
+    ROUND(LONGITUDE, 1) AS LONGITUDE_GRID,
+
+    COUNT(*) AS POSITION_COUNT,
+
+    COUNT(DISTINCT AIRCRAFT_KEY) AS UNIQUE_AIRCRAFT,
+
+    ROUND(
+        AVG(ALTITUDE_FT),
+        2
+    ) AS AVG_ALTITUDE_FT
+
+FROM {{ ref('fact_aircraft_positions') }}
+
+GROUP BY
+    EVENT_DATE,
+    ROUND(LATITUDE, 1),
+    ROUND(LONGITUDE, 1)

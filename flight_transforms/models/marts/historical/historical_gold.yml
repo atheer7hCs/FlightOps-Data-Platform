@@ -1,0 +1,200 @@
+version: 2
+
+models:
+
+  - name: dim_aircraft
+    description: "Aircraft dimension containing one row per aircraft."
+
+    columns:
+      - name: AIRCRAFT_KEY
+        description: "Aircraft identifier based on ICAO24."
+        data_tests:
+          - not_null
+          - unique
+
+      - name: ICAO24
+        data_tests:
+          - not_null
+
+  - name: dim_dates
+    description: "Date dimension for historical flight events."
+
+    columns:
+      - name: DATE_KEY
+        description: "Date key in YYYYMMDD format."
+        data_tests:
+          - not_null
+          - unique
+
+      - name: EVENT_DATE
+        data_tests:
+          - not_null
+
+  - name: fact_aircraft_positions
+    description: "Fact table containing historical aircraft position events."
+
+    columns:
+
+      - name: POSITION_KEY
+        description: "Unique identifier for each aircraft position event."
+        data_tests:
+          - not_null
+          - unique
+
+      - name: AIRCRAFT_KEY
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_aircraft')
+                field: AIRCRAFT_KEY
+
+      - name: DATE_KEY
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_dates')
+                field: DATE_KEY
+
+      - name: EVENT_DATETIME
+        data_tests:
+          - not_null
+
+      - name: LATITUDE
+        data_tests:
+          - not_null
+
+      - name: LONGITUDE
+        data_tests:
+          - not_null
+
+  - name: agg_daily_traffic
+    description: "Daily aircraft traffic metrics."
+
+    columns:
+      - name: EVENT_DATE
+        data_tests:
+          - not_null
+          - unique
+
+      - name: POSITION_COUNT
+        data_tests:
+          - not_null
+
+      - name: UNIQUE_AIRCRAFT
+        data_tests:
+          - not_null
+
+      - name: DATE_KEY
+        data_tests:
+          - not_null
+
+
+  - name: agg_hourly_traffic
+    description: "Hourly aircraft traffic metrics."
+
+    columns:
+      - name: EVENT_DATE
+        data_tests:
+          - not_null
+
+      - name: TIME_KEY
+        data_tests:
+          - not_null
+
+      - name: POSITION_COUNT
+        data_tests:
+          - not_null
+
+      - name: DATE_KEY
+        data_tests:
+          - not_null
+
+
+  - name: agg_altitude_distribution
+    description: "Aircraft position distribution by altitude band."
+
+    columns:
+      - name: EVENT_DATE
+        data_tests:
+          - not_null
+
+      - name: ALTITUDE_BAND
+        data_tests:
+          - not_null
+
+      - name: POSITION_COUNT
+        data_tests:
+          - not_null
+
+      - name: DATE_KEY
+        data_tests:
+          - not_null
+
+
+  - name: agg_traffic_grid
+    description: "Geographic aggregation of aircraft traffic for map visualization."
+
+    columns:
+      - name: EVENT_DATE
+        data_tests:
+          - not_null
+
+      - name: LATITUDE_GRID
+        data_tests:
+          - not_null
+
+      - name: LONGITUDE_GRID
+        data_tests:
+          - not_null
+
+      - name: POSITION_COUNT
+        data_tests:
+          - not_null
+
+      - name: DATE_KEY
+        data_tests:
+          - not_null
+
+  - name: dim_time
+    description: "Time dimension representing the 24 hours of the day."
+
+    columns:
+      - name: TIME_KEY
+        data_tests:
+          - not_null
+          - unique
+
+      - name: HOUR_NUMBER
+        data_tests:
+          - not_null
+
+      - name: HOUR_LABEL
+        data_tests:
+          - not_null
+
+      - name: DAY_PERIOD
+        data_tests:
+          - not_null
+
+
+  - name: agg_aircraft_activity
+    description: "Daily activity metrics for each aircraft."
+
+    columns:
+      - name: AIRCRAFT_KEY
+        data_tests:
+          - not_null
+
+      - name: EVENT_DATE
+        data_tests:
+          - not_null
+
+      - name: DATE_KEY
+        data_tests:
+          - not_null
+
+      - name: POSITION_COUNT
+        data_tests:
+          - not_null

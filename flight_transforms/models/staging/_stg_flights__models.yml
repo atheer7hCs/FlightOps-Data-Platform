@@ -1,0 +1,18 @@
+version: 2
+
+models:
+  - name: stg_flights
+    columns:
+      - name: aircraft_id
+        tests:
+          - not_null
+
+      - name: departure_time
+        tests:
+          - not_null
+
+      - name: departure_horiz_distance_m
+        tests:
+          - dbt_utils.accepted_range:
+              min_value: 0
+              inclusive: true

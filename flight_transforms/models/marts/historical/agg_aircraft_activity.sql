@@ -1,0 +1,41 @@
+{{ config(
+    materialized='table',
+    schema='HISTORICAL_GOLD'
+) }}
+
+SELECT
+
+    AIRCRAFT_KEY,
+
+    EVENT_DATE,
+
+    TO_NUMBER(
+        TO_CHAR(EVENT_DATE, 'YYYYMMDD')
+    ) AS DATE_KEY,
+
+    COUNT(*) AS POSITION_COUNT,
+
+    COUNT(DISTINCT EVENT_DATE) AS ACTIVE_DAYS,
+
+    COUNT_IF(
+        ON_GROUND_STATUS = 'AIRBORNE'
+    ) AS AIRBORNE_POSITIONS,
+
+    COUNT_IF(
+        ON_GROUND_STATUS = 'ON GROUND'
+    ) AS ON_GROUND_POSITIONS,
+
+    ROUND(
+        AVG(ALTITUDE_FT),
+        2
+    ) AS AVG_ALTITUDE_FT,
+
+    MIN(ALTITUDE_FT) AS MIN_ALTITUDE_FT,
+
+    MAX(ALTITUDE_FT) AS MAX_ALTITUDE_FT
+
+FROM {{ ref('fact_aircraft_positions') }}
+
+GROUP BY
+    AIRCRAFT_KEY,
+    EVENT_DATE

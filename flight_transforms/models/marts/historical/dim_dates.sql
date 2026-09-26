@@ -1,0 +1,24 @@
+{{ config(
+    materialized='table',
+    schema='HISTORICAL_GOLD'
+) }}
+
+SELECT DISTINCT
+
+    TO_NUMBER(TO_CHAR(EVENT_DATE, 'YYYYMMDD')) AS DATE_KEY,
+
+    EVENT_DATE,
+
+    YEAR(EVENT_DATE) AS YEAR,
+
+    MONTH(EVENT_DATE) AS MONTH,
+
+    MONTHNAME(EVENT_DATE) AS MONTH_NAME,
+
+    DAY(EVENT_DATE) AS DAY,
+
+    DAYOFWEEK(EVENT_DATE) AS DAY_OF_WEEK,
+
+    DAYNAME(EVENT_DATE) AS DAY_NAME
+
+FROM {{ ref('stg_historical_flights') }}

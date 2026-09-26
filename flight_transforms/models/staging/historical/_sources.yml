@@ -1,0 +1,26 @@
+version: 2
+
+sources:
+  - name: historical
+    database: FLIGHT_DATA
+    schema: HISTORICAL_BRONZE
+
+    tables:
+      - name: historical_flights
+
+        columns:
+          - name: ICAO24
+            tests:
+              - not_null
+
+          - name: EVENT_DATETIME
+            tests:
+              - not_null
+
+          - name: LATITUDE
+            tests:
+              - not_null
+
+          - name: LONGITUDE
+            tests:
+              - not_null

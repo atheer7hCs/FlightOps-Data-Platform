@@ -1,0 +1,20 @@
+# أسرار - لا تُرفع أبدًا
+.env
+airflow/.env
+
+# بيئات بايثون
+venv/
+__pycache__/
+*.pyc
+
+# بيانات محلية (كبيرة، لا داعي بـ Git)
+data/
+airflow/logs/
+
+# dbt
+flight_transforms/target/
+flight_transforms/dbt_packages/
+flight_transforms/logs/
+
+# ملفات مؤقتة بالمعاينة
+data/preview/

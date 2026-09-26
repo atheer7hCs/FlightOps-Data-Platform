@@ -1,0 +1,31 @@
+{{ config(
+    materialized='table',
+    schema='HISTORICAL_GOLD'
+) }}
+
+SELECT
+    EVENT_DATE,
+
+    TO_NUMBER(
+        TO_CHAR(EVENT_DATE, 'YYYYMMDD')
+    ) AS DATE_KEY,
+
+    EVENT_HOUR AS TIME_KEY,
+
+    COUNT(*) AS POSITION_COUNT,
+
+    COUNT(DISTINCT AIRCRAFT_KEY) AS UNIQUE_AIRCRAFT,
+
+    COUNT_IF(
+        ON_GROUND_STATUS = 'AIRBORNE'
+    ) AS AIRBORNE_POSITIONS,
+
+    COUNT_IF(
+        ON_GROUND_STATUS = 'ON GROUND'
+    ) AS ON_GROUND_POSITIONS
+
+FROM {{ ref('fact_aircraft_positions') }}
+
+GROUP BY
+    EVENT_DATE,
+    EVENT_HOUR

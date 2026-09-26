@@ -1,0 +1,44 @@
+version: 2
+
+models:
+  - name: dim_airports
+    description: "جدول أبعاد يحتوي كل المطارات الفريدة (إقلاع ووصول) المستخرجة من بيانات الرحلات"
+    columns:
+      - name: airport_key
+        description: "مفتاح اصطناعي فريد لكل مطار (surrogate key)"
+        tests:
+          - unique
+          - not_null
+
+  - name: dim_date
+    description: "جدول أبعاد التاريخ - يغطي كل أيام 2026 بغض النظر عن وجود رحلات فيها"
+    columns:
+      - name: date_key
+        description: "مفتاح اصطناعي فريد لكل يوم"
+        tests:
+          - unique
+          - not_null
+
+  - name: fct_flights
+    description: "جدول الحقائق المركزي - كل رحلة فريدة مع مقاييسها المحسوبة وروابطها بجداول الأبعاد"
+    columns:
+      - name: departure_airport_key
+        description: "يربط بمفتاح مطار الإقلاع بجدول dim_airports"
+        tests:
+          - relationships:
+              to: ref('dim_airports')
+              field: airport_key
+
+      - name: arrival_airport_key
+        description: "يربط بمفتاح مطار الوصول بجدول dim_airports"
+        tests:
+          - relationships:
+              to: ref('dim_airports')
+              field: airport_key
+
+      - name: flight_duration_minutes
+        description: "مدة الرحلة بالدقائق، محسوبة من الفرق بين وقت الإقلاع والوصول"
+        tests:
+          - dbt_utils.accepted_range:
+              min_value: 0
+              inclusive: false

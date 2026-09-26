@@ -1,0 +1,21 @@
+name: flight_transforms
+version: '1.0.0'
+config-version: 2
+
+profile: flight_transforms
+
+model-paths: ["models"]
+seed-paths: ["seeds"]
+macro-paths: ["macros"]
+
+clean-targets:
+  - "target"
+  - "dbt_packages"
+
+models:
+  flight_transforms:
+    staging:
+      +materialized: view
+
+    marts:
+      +materialized: table

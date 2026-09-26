@@ -1,0 +1,339 @@
+==================== 2026-09-18T10:39:52.171085Z | 01a0b419-e948-71c1-bdee-2e28e3185595 ====================
+10:39:52.180116 [info ]: Installing dbt project and profile setup
+10:39:52.261543 [info ]: Info Created .vscode/extensions.json with dbt extension recommendation
+10:39:52.265868 [info ]: Success Project created successfully!
+10:39:52.266254 [info ]: Info Project name: flight_transforms
+10:39:52.266546 [info ]: Info Project directory: flight_transforms
+10:40:34.901163 [info ]: Info Setting up your profile...
+10:40:34.910752 [info ]: Loading ~/.dbt/profiles.yml
+10:40:34.940378 [info ]: Info Creating new profile...
+==================== 2026-09-18T10:45:18.334456Z | 01a0b41e-e37c-79b3-8cbc-0f8fc918fcd3 ====================
+10:45:18.334938 [info ]: Installing dbt project and profile setup
+10:45:18.368463 [info ]: Info Created .vscode/extensions.json with dbt extension recommendation
+10:45:18.369060 [info ]: Success Project created successfully!
+10:45:18.369265 [info ]: Info Project name: flight_transforms
+10:45:18.369555 [info ]: Info Project directory: flight_transforms
+10:45:26.617642 [info ]: Info Skipping profile setup.
+10:45:26.617877 [info ]: Validating profile inputs, adapters, and connection
+
+10:45:26.618064 [info ]: dbt-fusion 2.0.0-preview.218
+10:45:26.618532 [info ]: Started loading project
+10:45:26.620486 [info ]: Loading ~/.dbt/profiles.yml
+10:45:26.621080 [info ]: Finished loading project [  0.00s]
+10:45:26.621270 [error]: [IoError (dbt1001)]: Profile 'flight_transforms' not found in profiles.yml
+  --> .\dbt_project.yml:3:10
+10:45:26.806636 [info ]: 
+==================== Execution Summary =====================
+Finished 'init' with 1 error [8.5s]
+==================== 2026-09-18T10:46:33.910601Z | 01a0b420-0ab3-7523-a704-e98bd24d8707 ====================
+10:46:33.911082 [info ]: Installing dbt project and profile setup
+10:46:33.988818 [info ]: Info Created .vscode/extensions.json with dbt extension recommendation
+10:46:33.989592 [info ]: Success Project created successfully!
+10:46:33.989819 [info ]: Info Project name: flight_transforms
+10:46:33.989995 [info ]: Info Project directory: flight_transforms
+10:46:45.817158 [info ]: Info Setting up your profile...
+10:46:45.817801 [info ]: Loading ~/.dbt/profiles.yml
+10:46:45.818480 [info ]: Info Creating new profile...
+10:49:40.082517 [info ]: Success Profile written to C:\Users\athee\.dbt\profiles.yml
+10:49:40.082887 [info ]: Validating profile inputs, adapters, and connection
+
+10:49:40.083151 [info ]: dbt-fusion 2.0.0-preview.218
+10:49:40.083726 [info ]: Started loading project
+10:49:40.086233 [info ]: Loading ~/.dbt/profiles.yml
+10:49:40.100189 [info ]: Finished loading project [  0.02s]
+10:49:40.100595 [info ]: Started debugging
+10:49:40.100812 [info ]: Debugging profile: dev
+10:49:40.101030 [info ]: Debugging dbt version: 2.0.0-preview.218
+10:49:40.101232 [info ]: Debugging platform: windows x86_64 (windows)
+10:49:40.101483 [info ]: Debugging adapter type: snowflake (remote)
+10:49:40.224205 [info ]: Debugging dependencies:
+  git: OK
+10:49:40.224964 [info ]: Debugging connection:
+  "account": "atheerh15@hotmail.com",
+  "user": "Atheer",
+  "database": "flight_data",
+  "warehouse": "flight_wh",
+  "schema": "flight_data.raw_layer"
+10:49:40.226147 [debug]: Snowflake driver resolved: snowflake 0.21.0.dev+dbt0.21.17
+10:49:45.019951 [info ]: Debugging connection test: ERROR
+10:49:45.020497 [info ]: Finished debugging [  4.92s]
+10:49:45.021013 [error]: [AuthenticationFailed (dbt1011)]: dbt was unable to connect to the database configured for the `snowflake` adapter.
+The following error was returned:
+
+parse "https://atheerh15%40hotmail.com.snowflakecomputing.com:443/session/v1/login-request?databaseName=flight_data&requestId=325e28dc-40db-40e6-718d-0106af89a766&request_guid=346b0243-c491-4015-7a69-cc9c7be1a381&schemaName=flight_data.raw_layer&warehouse=flight_wh": invalid URL escape "%40"
+
+Check your database credentials and try again. For more information, visit:
+https://docs.getdbt.com/docs/core/connect-data-platform/connection-profiles
+10:49:45.754197 [info ]: 
+==================== Execution Summary =====================
+Finished 'init' with 1 error for target 'dev' [3m 12s]
+[0m11:26:54.872730 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A805D767B0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A802E0B750>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A8071679D0>]}
+
+
+============================== 11:26:54.933394 | 511cf687-c7e6-46b0-841c-c8e30b10f516 ==============================
+[0m11:26:54.933394 [info ] [MainThread]: Running with dbt=1.11.15
+[0m11:26:54.935091 [debug] [MainThread]: running dbt with arguments {'static_parser': 'True', 'no_print': 'None', 'version_check': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'printer_width': '80', 'write_json': 'True', 'empty': 'None', 'log_cache_events': 'False', 'introspect': 'True', 'cache_selected_only': 'False', 'fail_fast': 'False', 'debug': 'False', 'log_format': 'default', 'profiles_dir': 'C:\\Users\\athee\\.dbt', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'partial_parse': 'True', 'invocation_command': 'dbt init flight_transforms', 'use_colors': 'True', 'indirect_selection': 'eager', 'use_experimental_parser': 'False', 'log_path': 'logs'}
+[0m11:26:54.989378 [info ] [MainThread]: A project called flight_transforms already exists here.
+[0m11:26:54.990987 [debug] [MainThread]: Command `dbt init` succeeded at 11:26:54.990748 after 0.55 seconds
+[0m11:26:54.991645 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A807157CE0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A8081E5FD0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A807179370>]}
+[0m11:26:54.992352 [debug] [MainThread]: Flushing usage events
+[0m11:26:55.957410 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m11:27:48.098823 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000021EB3C327B0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000021EB0CAB750>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000021EB50579D0>]}
+
+
+============================== 11:27:48.105897 | b935adcb-7c2c-43b3-85a0-52dbafef1efb ==============================
+[0m11:27:48.105897 [info ] [MainThread]: Running with dbt=1.11.15
+[0m11:27:48.106954 [debug] [MainThread]: running dbt with arguments {'version_check': 'True', 'no_print': 'None', 'static_parser': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'printer_width': '80', 'write_json': 'True', 'empty': 'None', 'log_cache_events': 'False', 'introspect': 'True', 'cache_selected_only': 'False', 'log_format': 'default', 'debug': 'False', 'fail_fast': 'False', 'profiles_dir': 'C:\\Users\\athee\\.dbt', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'partial_parse': 'True', 'use_colors': 'True', 'indirect_selection': 'eager', 'invocation_command': 'dbt debug', 'use_experimental_parser': 'False', 'log_path': 'logs'}
+[0m11:27:48.135763 [info ] [MainThread]: dbt version: 1.11.15
+[0m11:27:48.136634 [info ] [MainThread]: python version: 3.13.13
+[0m11:27:48.137170 [info ] [MainThread]: python path: C:\Users\athee\Projects\flight-data-project\venv\Scripts\python.exe
+[0m11:27:48.137628 [info ] [MainThread]: os info: Windows-11-10.0.26200-SP0
+[0m11:28:02.809812 [info ] [MainThread]: Using profiles dir at C:\Users\athee\.dbt
+[0m11:28:02.810762 [info ] [MainThread]: Using profiles.yml file at C:\Users\athee\.dbt\profiles.yml
+[0m11:28:02.811573 [info ] [MainThread]: Using dbt_project.yml file at C:\Users\athee\Projects\flight-data-project\dbt_project.yml
+[0m11:28:02.813630 [info ] [MainThread]: adapter type: snowflake
+[0m11:28:02.814446 [info ] [MainThread]: adapter version: 1.8.4
+[0m11:28:02.815494 [info ] [MainThread]: Configuration:
+[0m11:28:02.816543 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m11:28:02.817654 [info ] [MainThread]:   dbt_project.yml file [[31mERROR not found[0m]
+[0m11:28:02.819125 [info ] [MainThread]: Required dependencies:
+[0m11:28:02.820105 [debug] [MainThread]: Executing "git --help"
+[0m11:28:02.941444 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--no-lazy-fetch]\n           [--no-optional-locks] [--no-advice] [--bare] [--git-dir=<path>]\n           [--work-tree=<path>] [--namespace=<name>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone      Clone a repository into a new directory\n   init       Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add        Add file contents to the index\n   mv         Move or rename a file, a directory, or a symlink\n   restore    Restore working tree files\n   rm         Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect     Use binary search to find the commit that introduced a bug\n   diff       Show changes between commits, commit and working tree, etc\n   grep       Print lines matching a pattern\n   log        Show commit logs\n   show       Show various types of objects\n   status     Show the working tree status\n\ngrow, mark and tweak your common history\n   backfill   Download missing objects in a partial clone\n   branch     List, create, or delete branches\n   commit     Record changes to the repository\n   merge      Join two or more development histories together\n   rebase     Reapply commits on top of another base tip\n   reset      Reset current HEAD to the specified state\n   switch     Switch branches\n   tag        Create, list, delete or verify tags\n\ncollaborate (see also: git help workflows)\n   fetch      Download objects and refs from another repository\n   pull       Fetch from and integrate with another repository or a local branch\n   push       Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m11:28:02.943649 [debug] [MainThread]: STDERR: "b''"
+[0m11:28:02.945249 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m11:28:02.946440 [info ] [MainThread]: Connection:
+[0m11:28:02.947548 [info ] [MainThread]:   account: ZG83128.ap-south-1
+[0m11:28:02.949184 [info ] [MainThread]:   user: ATHEER
+[0m11:28:02.950764 [info ] [MainThread]:   database: flight_data
+[0m11:28:02.951997 [info ] [MainThread]:   warehouse: flight_wh
+[0m11:28:02.953533 [info ] [MainThread]:   role: None
+[0m11:28:02.954970 [info ] [MainThread]:   schema: raw_layer
+[0m11:28:02.956092 [info ] [MainThread]:   authenticator: None
+[0m11:28:02.957070 [info ] [MainThread]:   oauth_client_id: None
+[0m11:28:02.957988 [info ] [MainThread]:   query_tag: None
+[0m11:28:02.959382 [info ] [MainThread]:   client_session_keep_alive: False
+[0m11:28:02.960586 [info ] [MainThread]:   host: None
+[0m11:28:02.961568 [info ] [MainThread]:   port: None
+[0m11:28:02.962406 [info ] [MainThread]:   proxy_host: None
+[0m11:28:02.963229 [info ] [MainThread]:   proxy_port: None
+[0m11:28:02.964052 [info ] [MainThread]:   protocol: None
+[0m11:28:02.965518 [info ] [MainThread]:   connect_retries: 1
+[0m11:28:02.966814 [info ] [MainThread]:   connect_timeout: None
+[0m11:28:02.967761 [info ] [MainThread]:   retry_on_database_errors: False
+[0m11:28:02.968671 [info ] [MainThread]:   retry_all: False
+[0m11:28:02.969515 [info ] [MainThread]:   insecure_mode: False
+[0m11:28:02.970876 [info ] [MainThread]:   reuse_connections: None
+[0m11:28:02.972166 [info ] [MainThread]: Registered adapter: snowflake=1.8.4
+[0m11:28:03.362781 [debug] [MainThread]: Acquiring new snowflake connection 'debug'
+[0m11:28:03.363973 [debug] [MainThread]: Using snowflake connection "debug"
+[0m11:28:03.364517 [debug] [MainThread]: On debug: select 1 as id
+[0m11:28:03.365006 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m11:28:08.517047 [debug] [MainThread]: Snowflake adapter: Error running SQL: select 1 as id
+[0m11:28:08.518237 [debug] [MainThread]: Snowflake adapter: Rolling back transaction.
+[0m11:28:08.519212 [debug] [MainThread]: On debug: No close available on handle
+[0m11:28:08.520166 [info ] [MainThread]:   Connection test: [[31mERROR[0m]
+
+[0m11:28:08.521664 [info ] [MainThread]: [31m2 checks failed:[0m
+[0m11:28:08.523080 [info ] [MainThread]: Project loading failed for the following reason:
+ project path <C:\Users\athee\Projects\flight-data-project\dbt_project.yml> not found
+
+[0m11:28:08.524270 [info ] [MainThread]: dbt was unable to connect to the specified database.
+The database returned the following error:
+
+  >Database Error
+  250001 (08001): Failed to connect to DB: ZG83128.ap-south-1.snowflakecomputing.com:443. Incorrect username or password was specified. [27f8c632-8aa3-4fc2-bb6d-fabfe769a4cb]
+
+Check your database credentials and try again. For more information, visit:
+https://docs.getdbt.com/docs/configure-your-profile
+
+
+[0m11:28:08.526959 [debug] [MainThread]: Command `dbt debug` failed at 11:28:08.526592 after 20.61 seconds
+[0m11:28:08.527902 [debug] [MainThread]: Connection 'debug' was properly closed.
+[0m11:28:08.528867 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000021EC7987CE0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000021EC7B1CA70>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000021EC79BD6A0>]}
+[0m11:28:08.530005 [debug] [MainThread]: Flushing usage events
+[0m11:28:09.584329 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m17:48:55.327355 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E3339B67B0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E3309CB750>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E334DA79D0>]}
+
+
+============================== 17:48:55.340529 | 82195673-a463-4521-aaac-b49f2e73357c ==============================
+[0m17:48:55.340529 [info ] [MainThread]: Running with dbt=1.11.15
+[0m17:48:55.342380 [debug] [MainThread]: running dbt with arguments {'version_check': 'True', 'no_print': 'None', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'target_path': 'None', 'printer_width': '80', 'write_json': 'True', 'introspect': 'True', 'log_cache_events': 'False', 'empty': 'None', 'cache_selected_only': 'False', 'fail_fast': 'False', 'debug': 'False', 'log_format': 'default', 'partial_parse': 'True', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'profiles_dir': 'C:\\Users\\athee\\.dbt', 'use_colors': 'True', 'indirect_selection': 'eager', 'invocation_command': 'dbt debug', 'use_experimental_parser': 'False', 'log_path': 'logs'}
+[0m17:48:55.391592 [info ] [MainThread]: dbt version: 1.11.15
+[0m17:48:55.392424 [info ] [MainThread]: python version: 3.13.13
+[0m17:48:55.393338 [info ] [MainThread]: python path: C:\Users\athee\Projects\flight-data-project\venv\Scripts\python.exe
+[0m17:48:55.394124 [info ] [MainThread]: os info: Windows-11-10.0.26200-SP0
+[0m17:49:04.727156 [info ] [MainThread]: Using profiles dir at C:\Users\athee\.dbt
+[0m17:49:04.728000 [info ] [MainThread]: Using profiles.yml file at C:\Users\athee\.dbt\profiles.yml
+[0m17:49:04.728588 [info ] [MainThread]: Using dbt_project.yml file at C:\Users\athee\Projects\flight-data-project\dbt_project.yml
+[0m17:49:04.730793 [info ] [MainThread]: adapter type: snowflake
+[0m17:49:04.731401 [info ] [MainThread]: adapter version: 1.8.4
+[0m17:49:04.731902 [info ] [MainThread]: Configuration:
+[0m17:49:04.732304 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m17:49:04.732812 [info ] [MainThread]:   dbt_project.yml file [[31mERROR not found[0m]
+[0m17:49:04.733523 [info ] [MainThread]: Required dependencies:
+[0m17:49:04.734246 [debug] [MainThread]: Executing "git --help"
+[0m17:49:04.794756 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--no-lazy-fetch]\n           [--no-optional-locks] [--no-advice] [--bare] [--git-dir=<path>]\n           [--work-tree=<path>] [--namespace=<name>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone      Clone a repository into a new directory\n   init       Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add        Add file contents to the index\n   mv         Move or rename a file, a directory, or a symlink\n   restore    Restore working tree files\n   rm         Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect     Use binary search to find the commit that introduced a bug\n   diff       Show changes between commits, commit and working tree, etc\n   grep       Print lines matching a pattern\n   log        Show commit logs\n   show       Show various types of objects\n   status     Show the working tree status\n\ngrow, mark and tweak your common history\n   backfill   Download missing objects in a partial clone\n   branch     List, create, or delete branches\n   commit     Record changes to the repository\n   history    EXPERIMENTAL: Rewrite history\n   merge      Join two or more development histories together\n   rebase     Reapply commits on top of another base tip\n   reset      Set `HEAD` or the index to a known state\n   switch     Switch branches\n   tag        Create, list, delete or verify tags\n\ncollaborate (see also: git help workflows)\n   fetch      Download objects and refs from another repository\n   pull       Fetch from and integrate with another repository or a local branch\n   push       Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m17:49:04.795770 [debug] [MainThread]: STDERR: "b''"
+[0m17:49:04.796335 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m17:49:04.797063 [info ] [MainThread]: Connection:
+[0m17:49:04.797768 [info ] [MainThread]:   account: BOPYGYA-EZ90183
+[0m17:49:04.798264 [info ] [MainThread]:   user: ATHEER
+[0m17:49:04.798911 [info ] [MainThread]:   database: FLIGHT_DATA
+[0m17:49:04.799481 [info ] [MainThread]:   warehouse: flight_wh
+[0m17:49:04.800034 [info ] [MainThread]:   role: ACCOUNTADMIN
+[0m17:49:04.800551 [info ] [MainThread]:   schema: dbt_dev
+[0m17:49:04.801073 [info ] [MainThread]:   authenticator: None
+[0m17:49:04.801677 [info ] [MainThread]:   oauth_client_id: None
+[0m17:49:04.802455 [info ] [MainThread]:   query_tag: None
+[0m17:49:04.803084 [info ] [MainThread]:   client_session_keep_alive: False
+[0m17:49:04.803762 [info ] [MainThread]:   host: None
+[0m17:49:04.804403 [info ] [MainThread]:   port: None
+[0m17:49:04.805077 [info ] [MainThread]:   proxy_host: None
+[0m17:49:04.805729 [info ] [MainThread]:   proxy_port: None
+[0m17:49:04.806220 [info ] [MainThread]:   protocol: None
+[0m17:49:04.806767 [info ] [MainThread]:   connect_retries: 1
+[0m17:49:04.807380 [info ] [MainThread]:   connect_timeout: None
+[0m17:49:04.808185 [info ] [MainThread]:   retry_on_database_errors: False
+[0m17:49:04.809031 [info ] [MainThread]:   retry_all: False
+[0m17:49:04.809849 [info ] [MainThread]:   insecure_mode: False
+[0m17:49:04.810489 [info ] [MainThread]:   reuse_connections: None
+[0m17:49:04.811609 [info ] [MainThread]: Registered adapter: snowflake=1.8.4
+[0m17:49:05.547176 [debug] [MainThread]: Acquiring new snowflake connection 'debug'
+[0m17:49:05.548503 [debug] [MainThread]: Using snowflake connection "debug"
+[0m17:49:05.549074 [debug] [MainThread]: On debug: select 1 as id
+[0m17:49:05.549548 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m17:49:10.493462 [debug] [MainThread]: SQL status: SUCCESS 1 in 4.944 seconds
+[0m17:49:10.495092 [debug] [MainThread]: On debug: Close
+[0m17:49:10.655735 [info ] [MainThread]:   Connection test: [[32mOK connection ok[0m]
+
+[0m17:49:10.656625 [info ] [MainThread]: [31m1 check failed:[0m
+[0m17:49:10.657179 [info ] [MainThread]: Project loading failed for the following reason:
+ project path <C:\Users\athee\Projects\flight-data-project\dbt_project.yml> not found
+
+[0m17:49:10.658597 [debug] [MainThread]: Command `dbt debug` failed at 17:49:10.658444 after 15.76 seconds
+[0m17:49:10.658988 [debug] [MainThread]: Connection 'debug' was properly closed.
+[0m17:49:10.659501 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E3478E5F30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E34785D250>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E3476FD6A0>]}
+[0m17:49:10.660270 [debug] [MainThread]: Flushing usage events
+[0m17:49:11.521324 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m17:53:09.822008 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001563DAD27B0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001563AB2B750>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001563EF3FD90>]}
+
+
+============================== 17:53:09.826181 | 9913fea6-6353-47d6-b9ec-fa1718dc8a31 ==============================
+[0m17:53:09.826181 [info ] [MainThread]: Running with dbt=1.11.15
+[0m17:53:09.827165 [debug] [MainThread]: running dbt with arguments {'static_parser': 'True', 'no_print': 'None', 'version_check': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'target_path': 'None', 'printer_width': '80', 'write_json': 'True', 'empty': 'False', 'log_cache_events': 'False', 'introspect': 'True', 'cache_selected_only': 'False', 'fail_fast': 'False', 'debug': 'False', 'log_format': 'default', 'profiles_dir': 'C:\\Users\\athee\\.dbt', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'partial_parse': 'True', 'indirect_selection': 'eager', 'use_colors': 'True', 'invocation_command': 'dbt run', 'use_experimental_parser': 'False', 'log_path': 'logs'}
+[0m17:53:09.827627 [error] [MainThread]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path C:\Users\athee\Projects\flight-data-project\dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m17:53:09.828451 [debug] [MainThread]: Command `dbt run` failed at 17:53:09.828336 after 0.24 seconds
+[0m17:53:09.828760 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001563EEE7820>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001563FFB4290>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001563EEE3350>]}
+[0m17:53:09.829076 [debug] [MainThread]: Flushing usage events
+[0m17:53:10.460937 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m14:19:42.738252 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022295C167B0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022292CBB750>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002229803FD90>]}
+
+
+============================== 14:19:42.746593 | b278f94d-bb0e-4169-9784-5eef1b148872 ==============================
+[0m14:19:42.746593 [info ] [MainThread]: Running with dbt=1.11.15
+[0m14:19:42.747487 [debug] [MainThread]: running dbt with arguments {'static_parser': 'True', 'no_print': 'None', 'version_check': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'printer_width': '80', 'write_json': 'True', 'introspect': 'True', 'log_cache_events': 'False', 'empty': 'False', 'cache_selected_only': 'False', 'fail_fast': 'False', 'debug': 'False', 'log_format': 'default', 'partial_parse': 'True', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'profiles_dir': 'C:\\Users\\athee\\.dbt', 'indirect_selection': 'eager', 'invocation_command': 'dbt run', 'use_colors': 'True', 'use_experimental_parser': 'False', 'log_path': 'logs'}
+[0m14:19:42.748063 [error] [MainThread]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path C:\Users\athee\Projects\flight-data-project\dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m14:19:42.749205 [debug] [MainThread]: Command `dbt run` failed at 14:19:42.749028 after 0.47 seconds
+[0m14:19:42.749718 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022297FE7820>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000222980E4290>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022297FE3350>]}
+[0m14:19:42.750271 [debug] [MainThread]: Flushing usage events
+[0m14:19:43.915389 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m20:03:22.872616 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000024C280F27B0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000024C2518B750>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000024C295079D0>]}
+
+
+============================== 20:03:22.927220 | c886dd9c-18b2-4acc-8a59-039264c84250 ==============================
+[0m20:03:22.927220 [info ] [MainThread]: Running with dbt=1.11.15
+[0m20:03:22.929417 [debug] [MainThread]: running dbt with arguments {'static_parser': 'True', 'no_print': 'None', 'version_check': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'target_path': 'None', 'printer_width': '80', 'write_json': 'True', 'introspect': 'True', 'log_cache_events': 'False', 'empty': 'None', 'cache_selected_only': 'False', 'fail_fast': 'False', 'debug': 'False', 'log_format': 'default', 'profiles_dir': 'C:\\Users\\athee\\.dbt', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'partial_parse': 'True', 'use_colors': 'True', 'invocation_command': 'dbt debug', 'indirect_selection': 'eager', 'use_experimental_parser': 'False', 'log_path': 'logs'}
+[0m20:03:22.954472 [info ] [MainThread]: dbt version: 1.11.15
+[0m20:03:22.955807 [info ] [MainThread]: python version: 3.13.13
+[0m20:03:22.956519 [info ] [MainThread]: python path: C:\Users\athee\Projects\flight-data-project\venv\Scripts\python.exe
+[0m20:03:22.956955 [info ] [MainThread]: os info: Windows-11-10.0.26200-SP0
+[0m20:03:23.648960 [info ] [MainThread]: Using profiles dir at C:\Users\athee\.dbt
+[0m20:03:23.649519 [info ] [MainThread]: Using profiles.yml file at C:\Users\athee\.dbt\profiles.yml
+[0m20:03:23.649846 [info ] [MainThread]: Using dbt_project.yml file at C:\Users\athee\Projects\flight-data-project\dbt_project.yml
+[0m20:03:23.650758 [info ] [MainThread]: adapter type: snowflake
+[0m20:03:23.651059 [info ] [MainThread]: adapter version: 1.8.4
+[0m20:03:23.651393 [info ] [MainThread]: Configuration:
+[0m20:03:23.651668 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m20:03:23.651927 [info ] [MainThread]:   dbt_project.yml file [[31mERROR not found[0m]
+[0m20:03:23.652194 [info ] [MainThread]: Required dependencies:
+[0m20:03:23.652473 [debug] [MainThread]: Executing "git --help"
+[0m20:03:23.690727 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--no-lazy-fetch]\n           [--no-optional-locks] [--no-advice] [--bare] [--git-dir=<path>]\n           [--work-tree=<path>] [--namespace=<name>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone      Clone a repository into a new directory\n   init       Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add        Add file contents to the index\n   mv         Move or rename a file, a directory, or a symlink\n   restore    Restore working tree files\n   rm         Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect     Use binary search to find the commit that introduced a bug\n   diff       Show changes between commits, commit and working tree, etc\n   grep       Print lines matching a pattern\n   log        Show commit logs\n   show       Show various types of objects\n   status     Show the working tree status\n\ngrow, mark and tweak your common history\n   backfill   Download missing objects in a partial clone\n   branch     List, create, or delete branches\n   commit     Record changes to the repository\n   history    EXPERIMENTAL: Rewrite history\n   merge      Join two or more development histories together\n   rebase     Reapply commits on top of another base tip\n   reset      Set `HEAD` or the index to a known state\n   switch     Switch branches\n   tag        Create, list, delete or verify tags\n\ncollaborate (see also: git help workflows)\n   fetch      Download objects and refs from another repository\n   pull       Fetch from and integrate with another repository or a local branch\n   push       Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m20:03:23.691159 [debug] [MainThread]: STDERR: "b''"
+[0m20:03:23.691521 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m20:03:23.691874 [info ] [MainThread]: Connection:
+[0m20:03:23.692185 [info ] [MainThread]:   account: BOPYGYA-EZ90183
+[0m20:03:23.692546 [info ] [MainThread]:   user: ATHEER
+[0m20:03:23.692936 [info ] [MainThread]:   database: FLIGHT_DATA
+[0m20:03:23.693273 [info ] [MainThread]:   warehouse: flight_wh
+[0m20:03:23.693623 [info ] [MainThread]:   role: ACCOUNTADMIN
+[0m20:03:23.693988 [info ] [MainThread]:   schema: dbt_dev
+[0m20:03:23.694338 [info ] [MainThread]:   authenticator: None
+[0m20:03:23.694735 [info ] [MainThread]:   oauth_client_id: None
+[0m20:03:23.695108 [info ] [MainThread]:   query_tag: None
+[0m20:03:23.695458 [info ] [MainThread]:   client_session_keep_alive: False
+[0m20:03:23.695880 [info ] [MainThread]:   host: None
+[0m20:03:23.696131 [info ] [MainThread]:   port: None
+[0m20:03:23.696563 [info ] [MainThread]:   proxy_host: None
+[0m20:03:23.697190 [info ] [MainThread]:   proxy_port: None
+[0m20:03:23.697860 [info ] [MainThread]:   protocol: None
+[0m20:03:23.698429 [info ] [MainThread]:   connect_retries: 1
+[0m20:03:23.698824 [info ] [MainThread]:   connect_timeout: None
+[0m20:03:23.699205 [info ] [MainThread]:   retry_on_database_errors: False
+[0m20:03:23.699568 [info ] [MainThread]:   retry_all: False
+[0m20:03:23.699993 [info ] [MainThread]:   insecure_mode: False
+[0m20:03:23.700281 [info ] [MainThread]:   reuse_connections: None
+[0m20:03:23.700812 [info ] [MainThread]: Registered adapter: snowflake=1.8.4
+[0m20:03:23.952369 [debug] [MainThread]: Acquiring new snowflake connection 'debug'
+[0m20:03:23.953038 [debug] [MainThread]: Using snowflake connection "debug"
+[0m20:03:23.953296 [debug] [MainThread]: On debug: select 1 as id
+[0m20:03:23.953515 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m20:03:23.953866 [debug] [MainThread]: Snowflake adapter: Error running SQL: select 1 as id
+[0m20:03:23.954116 [debug] [MainThread]: Snowflake adapter: Rolling back transaction.
+[0m20:03:23.954354 [debug] [MainThread]: On debug: No close available on handle
+[0m20:03:23.954597 [info ] [MainThread]:   Connection test: [[31mERROR[0m]
+
+[0m20:03:23.955606 [info ] [MainThread]: [31m2 checks failed:[0m
+[0m20:03:23.956094 [info ] [MainThread]: Project loading failed for the following reason:
+ project path <C:\Users\athee\Projects\flight-data-project\dbt_project.yml> not found
+
+[0m20:03:23.956555 [info ] [MainThread]: dbt was unable to connect to the specified database.
+The database returned the following error:
+
+  >Database Error
+  [Errno 2] No such file or directory: 'C:\\Users\\athee\\.ssh\\snowflake_key.p8'
+
+Check your database credentials and try again. For more information, visit:
+https://docs.getdbt.com/docs/configure-your-profile
+
+
+[0m20:03:23.957692 [debug] [MainThread]: Command `dbt debug` failed at 20:03:23.957572 after 1.19 seconds
+[0m20:03:23.958029 [debug] [MainThread]: Connection 'debug' was properly closed.
+[0m20:03:23.958367 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000024C3BEB7BB0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000024C3BF2FD10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000024C3BEED6A0>]}
+[0m20:03:23.958921 [debug] [MainThread]: Flushing usage events
+[0m20:03:24.901178 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m13:16:40.705006 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C0EF5927B0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C0EC5CB750>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C0F09FFD90>]}
+
+
+============================== 13:16:40.712489 | 701ac08c-d197-4608-a685-d13738d4da6c ==============================
+[0m13:16:40.712489 [info ] [MainThread]: Running with dbt=1.11.15
+[0m13:16:40.713337 [debug] [MainThread]: running dbt with arguments {'static_parser': 'True', 'no_print': 'None', 'version_check': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'printer_width': '80', 'write_json': 'True', 'introspect': 'True', 'log_cache_events': 'False', 'empty': 'False', 'cache_selected_only': 'False', 'log_format': 'default', 'debug': 'False', 'fail_fast': 'False', 'profiles_dir': 'C:\\Users\\athee\\.dbt', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'partial_parse': 'True', 'use_colors': 'True', 'invocation_command': 'dbt run --select dim_time agg_aircraft_activity agg_daily_traffic agg_hourly_traffic agg_altitude_distribution agg_traffic_grid', 'indirect_selection': 'eager', 'use_experimental_parser': 'False', 'log_path': 'logs'}
+[0m13:16:40.714175 [error] [MainThread]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path C:\Users\athee\Projects\flight-data-project\dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m13:16:40.715164 [debug] [MainThread]: Command `dbt run` failed at 13:16:40.714994 after 0.32 seconds
+[0m13:16:40.715634 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C0F09A7820>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C0F1A74290>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C0F09A3350>]}
+[0m13:16:40.716375 [debug] [MainThread]: Flushing usage events
+[0m13:16:41.587193 [debug] [MainThread]: An error was encountered while trying to flush usage events
