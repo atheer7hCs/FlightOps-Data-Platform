@@ -19,7 +19,7 @@ arrival_airports as (
 ),
 
 dates as (
-    select * from {{ ref('dim_date') }}
+    select * from {{ ref('dim_dates') }}
 ),
 
 joined as (

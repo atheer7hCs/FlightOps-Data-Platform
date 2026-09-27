@@ -10,7 +10,7 @@ models:
           - unique
           - not_null
 
-  - name: dim_date
+  - name: dim_dates
     description: "جدول أبعاد التاريخ - يغطي كل أيام 2026 بغض النظر عن وجود رحلات فيها"
     columns:
       - name: date_key
